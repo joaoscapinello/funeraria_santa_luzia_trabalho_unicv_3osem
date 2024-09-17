@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento do Produto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Memorial Eterno</h1>
+            <img src="memorial-eterno.webp" alt="Produto" class="product-image">
+            <div class="countdown" id="countdown"></div>
+        </div>
+        <div class="features">
+            <h2>Recursos Destacados</h2>
+            <ul>
+                <li>Capsula do Tempo Digital:</li>
+                <p>Um espaço seguro para armazenar fotos, vídeos e mansegens que podem ser acessados e compatilhados por gerações.</p>
+                <li>Memorial com Realidade Aumentada (AR)</li>
+                <p>Monumento físico que, via dispositivo móvel, exibe vídeos, áudios e histórias dos entes queridos, proporcionando uma experiência interativa.</p>
+                <li>Plantio de Árvore Conectado</li>
+                <p>Uma árvore é plantada em nome do falecido, e a família pode acompanhar seu crescimento através de um app, simbolizando a vida contínua.</p>
+            </ul>
+        </div>
+        <form id="preOrderForm">
+            <h2>Pré-venda</h2>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <button type="submit">Registrar Interesse</button>
+        </form>
+    </div>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        const launchDate = new Date('2025-01-01T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `<time>${days}d ${hours}h ${minutes}m ${seconds}s</time>`;
+
+            if (distance < 0) {
+                countdownElement.innerHTML = "<time>Lançado!</time>";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

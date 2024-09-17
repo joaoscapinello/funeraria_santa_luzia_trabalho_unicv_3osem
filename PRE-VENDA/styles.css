@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+    text-align: center;
+    padding: 20px;
+}
+.product-image {
+    width: 100%;
+    height: auto;
+}
+.features {
+    margin-top: 20px;
+}
+.countdown {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0% { color: #000; }
+    50% { color: #ff0000; }
+    100% { color: #000; }
+}
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+input, button {
+    padding: 10px;
+    margin: 5px 0;
+}
