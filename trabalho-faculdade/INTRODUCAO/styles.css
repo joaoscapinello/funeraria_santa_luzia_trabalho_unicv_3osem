@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-image: url('https://jcconcursos.com.br/media/uploads/noticia/caixao-aberto.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.5em;
+}
+
+p {
+    font-size: 1.5em;
+    max-width: 600px;
+    margin: 0.5em;
+}

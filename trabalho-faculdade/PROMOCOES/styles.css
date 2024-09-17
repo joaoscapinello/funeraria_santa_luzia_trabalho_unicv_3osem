@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.offer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.offer img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.offer-title {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.offer-description {
+    margin: 5px 0;
+}
+
+.prices {
+    margin-top: 10px;
+}
+
+.original-price {
+    color: #888;
+}
+
+.discount-price {
+    font-size: 1.2em;
+    color: #e60000;
+    margin-left: 10px;
+}

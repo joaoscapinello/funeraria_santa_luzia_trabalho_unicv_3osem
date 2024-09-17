@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento do Produto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Nosso Novo Produto</h1>
+            <img src="produto.jpg" alt="Produto" class="product-image">
+            <div class="countdown" id="countdown"></div>
+        </div>
+        <div class="features">
+            <h2>Recursos Destacados</h2>
+            <ul>
+                <li>Recurso 1 incrível</li>
+                <li>Recurso 2 inovador</li>
+                <li>Recurso 3 que você vai adorar</li>
+            </ul>
+        </div>
+        <form id="preOrderForm">
+            <h2>Pré-venda</h2>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <button type="submit">Registrar Interesse</button>
+        </form>
+    </div>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        const launchDate = new Date('2025-01-01T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `<time>${days}d ${hours}h ${minutes}m ${seconds}s</time>`;
+
+            if (distance < 0) {
+                countdownElement.innerHTML = "<time>Lançado!</time>";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
